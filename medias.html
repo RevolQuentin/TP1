@@ -2,11 +2,65 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <title> Titre </title>
+        <style>
+            table, td, th {border: 1px solid}
+        </style>
     </head>
     <body>
         <a href="./textlistforms.html">Textes&amp;Listes&amp;Formulaires |</a>
         <a href="./tables.html">Tableaux |</a>
         Médias
         <hr>
+        
+        <ol>
+            <li><a href="#image">Images</a></li>
+            <li><a href="#video1">Vidéo 1</a></li>
+            <li><a href="#video2">Vidéo 2</a></li>
+            <li><a href="#audio">Audio</a></li>
+            <li><a href="#iframe">Iframe</a></li>
+        </ol>
+        <hr>
+        
+        <h2>Manipulation des médias en HTML</h2>
+        
+        <h3>Images<span class="material-icons">insert_photo</span></h3>
+        <table>
+            <tr>
+                <td rowspan="2"><img src="./image/nantes.jpg" alt="Nantes" height="200" width="400" ></td>
+                <td colspan="2"><svg width="200" height="200" xmlns:xlink="http://www.w3.org/1999/xlink"><a xlink:href="https://isen-nantes.fr/" target="_blank"><rect width="100" height="100" style="fill:rgb(1, 146, 1)" /></a></svg></td>
+                <td><img src="./image/nantes.jpg" alt="Nantes" height="200" width="400" ></td></tr>
+            <tr>
+                <td colspan="2"> <svg height="60" width="200">
+                <text x="0" y="15" fill="red" transform="rotate(30 20,40)">non disponible</text>
+                </svg> </td>
+                <td><img src="./image/nantes.jpg" alt="Nantes" height="200" width="400" ></td></tr>
+        </table>
+        
+        <h3 id="video1">Vidéo avec la balise &lt; iframe &gt;<i class="material-icons">movie_creation</i></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7gwK1dcz0IU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <h3 id="video2">Vidéo avec la balise &lt; video &gt;<i class="material-icons">movie_creation</i></h3>
+        <video width="320" height="240" controls>
+            <source src="./video/windtunnel.mp4" type="video/mp4">
+            </video>
+
+        <h3 id="audio">Audio <i class="material-icons">music_note</i></h3>
+        <audio controls>
+            <source src="./audio/audio.mp3.m4a" type="audio/mp3">
+        </audio>
+
+        <h3 id="iframe">Iframe <i class="material-icons">link</i><a href="#frame" onclick="javascript:afficher('frame');">cliquez ici !!</a></h3>
+        <iframe id="frame" src="https://www.isen-nantes.fr/" width="700" height="500" name="nom" style="visibility:hidden;"></iframe>
+        <script>
+            function afficher(id)
+          {
+              if(document.getElementById(id).style.visibility=="hidden") document.getElementById(id).style.visibility="visible";
+            else
+              return true;
+          }
+          </script>
     </body>
 </html>
